@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <title>Mapeamento de Patologias | Permacultura | Casa da Costa | Paulo Lopes</title>
+
+    <!-- Framework W3.CSS & Estilos de Suporte -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+
+    <style>
+        :root {
+            --bg-color: #fcfbf9;          /* Marfim de Arquivo / Papel */
+            --text-color: #0f1e2d;        /* Azul-Marinho Profundo */
+            --accent-color: #8c2d19;      /* Vermelho-Tijolo / Sanguínea */
+            --muted-color: #5c6b73;       /* Azul Pedra / Grafite / Salitre */
+            --border-color: #d8d3cd;      /* Linha de Divisão Subtil */
+            --card-bg: #ffffff;           /* Branco Puro para Blocos */
+            
+            --font-serif: "Cardo", "Georgia", "Times New Roman", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+        }
+
+        body {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color) !important;
+            font-family: var(--font-serif);
+            line-height: 1.75;
+            font-size: 1.05rem;
+            margin: 0;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .font-sans { font-family: var(--font-sans) !important; }
+        .font-mono { font-family: var(--font-mono) !important; }
+
+        .breadcrumb {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .breadcrumb a {
+            color: var(--muted-color);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .breadcrumb a:hover {
+            color: var(--accent-color);
+        }
+
+        .breadcrumb span {
+            color: var(--accent-color);
+        }
+
+        header {
+            border-bottom: 2px solid var(--text-color);
+            padding-bottom: 20px;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            font-family: var(--font-sans);
+            font-size: 2rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-color);
+            margin: 0 0 6px 0;
+        }
+
+        .subtitle {
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+            margin: 0 0 8px 0;
+        }
+
+        .section-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--accent-color);
+            padding: 24px;
+            margin-bottom: 25px;
+        }
+
+        .section-card h3 {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--text-color);
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .section-card p {
+            font-size: 0.98rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+
+        .image-placeholder {
+            background-color: var(--bg-color);
+            border: 1px dashed var(--muted-color);
+            min-height: 160px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+            color: var(--muted-color);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+        }
+
+        .newsletter-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-top: 3px solid var(--accent-color);
+            padding: 28px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        .embeddable-buttondown-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 440px;
+            margin: 0 auto;
+        }
+
+        .embeddable-buttondown-form input[type="email"] {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--border-color);
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        .embeddable-buttondown-form input[type="submit"] {
+            padding: 12px 18px;
+            border: 0;
+            background: var(--text-color);
+            color: #ffffff;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .embeddable-buttondown-form input[type="submit"]:hover {
+            background: var(--accent-color);
+        }
+
+        footer.site-footer {
+            margin-top: 60px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+            padding-bottom: 30px;
+            font-family: var(--font-sans);
+            font-size: 0.82rem;
+            color: var(--muted-color);
+            text-align: center;
+        }
+
+        footer.site-footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer.site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-links {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body class="w3-padding-large">
+
+    <main class="w3-content w3-padding-24" style="max-width: 900px;">
+
+        <!-- Navegação Breadcrumb Superior -->
+        <nav class="breadcrumb">
+            <a href="https://paulolopes.org">paulolopes.org</a> / <a href="../index.html">casa da costa</a> / <a href="./index.html">permacultura</a> / <span>patologias</span>
+        </nav>
+
+        <!-- Cabeçalho -->
+        <header>
+            <h1>03. Mapeamento de Patologias</h1>
+            <p class="subtitle">Diagnóstico técnico das lesões estruturais e construtivas induzidas pelo meio marinho.</p>
+        </header>
+
+        <!-- Conteúdo do Diagnóstico -->
+        <section>
+            
+            <div class="section-card">
+                <h3>A. Corrosão de Armaduras por Cloretos e Carbonatação</h3>
+                <p><b>Diagnóstico:</b> O betão armado convencional sofreu despassivação do aço devido à penetração profunda de iões cloreto do aerossol marinho e à carbonatação da matriz cimentícia, originando expansão volumétrica, fendelhação e desprendimento de recobrimentos.</p>
+                <p><b>Ação Corretiva:</b> Purgas mecânicas profundas até ao betão são, limpeza por jateamento, passivação do aço com argamassas inibidoras minerais e reconstituição volumétrica com argamassas tixotrópicas de ligantes hidráulicos compatíveis.</p>
+                <div class="image-placeholder">
+                    <span>[Registo Fotográfico: ../assets/img/patologias/corrosao_01.jpg]</span>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>B. Humidade Capilar e Eflorescências Salinas</h3>
+                <p><b>Diagnóstico:</b> Ascensão hídrica a partir do solo arenoso da duna através dos capilares das alvenarias antigas. A evaporação na superfície liberta sais higroscópicos (cloretos e sulfatos), provocando eflorescências, criptoflorescências e degradação dos rebocos tradicionais.</p>
+                <p><b>Ação Corretiva:</b> Execução de barreira física ou química de corte de capilaridade, remoção total de rebocos contaminados até 50cm acima da mancha de humidade e aplicação de sistemas de rebocos macroporosos desumidificantes à base de cal.</p>
+                <div class="image-placeholder">
+                    <span>[Registo Fotográfico: ../assets/img/patologias/humidade_02.jpg]</span>
+                </div>
+            </div>
+
+            <div class="section-card">
+                <h3>C. Choque Térmico e Degradação da Envolvente</h3>
+                <p><b>Diagnóstico:</b> Elevadas amplitudes térmicas diárias associadas à ação mecânica de ventos dominantes e radiação UV intensa, causando fadiga material nos revestimentos exteriores sintéticos pré-existentes.</p>
+                <p><b>Ação Corretiva:</b> Substituição de barreiras plásticas estanques por sistemas de isolamento térmico transpirante pelo interior/exterior e acabamento mineral contínuo.</p>
+                <div class="image-placeholder">
+                    <span>[Registo Fotográfico: ../assets/img/patologias/fachada_03.jpg]</span>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Módulo de Newsletter (D2C) -->
+        <section class="newsletter-section w3-center">
+            <h2 class="w3-medium w3-uppercase font-mono" style="color: var(--accent-color); letter-spacing: 2px; margin: 0 0 6px 0;">
+                Notícias do Artífice
+            </h2>
+            <p class="w3-small font-serif" style="color: var(--muted-color); max-width: 580px; margin: 0 auto 1.2rem auto; font-style: italic;">
+                Correspondência intermitente sobre a contracultura desta margem. <br>
+                Subscreve para receber as análises técnicas de patologia e ruína diretamente na tua caixa de correio.
+            </p>
+
+            <form action="https://buttondown.com/api/emails/embed-subscribe/pjfcl" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.com/pjfcl', 'popupwindow')" class="embeddable-buttondown-form">
+                <input type="email" name="email" id="bd-email" placeholder="teu.email@dominio.pt" required />
+                <input type="submit" value="Subscrever Notícias" />
+            </form>
+        </section>
+
+        <!-- Rodapé Padronizado -->
+        <footer class="site-footer">
+            <p class="font-serif" style="font-style: italic; font-size: 1.05rem; color: var(--muted-color); margin-bottom: 10px;">
+                "Enquanto a mão corta, a mente destila."
+            </p>
+            <p class="font-mono w3-tiny w3-uppercase w3-wide" style="letter-spacing: 1px; margin-bottom: 0.8rem;">
+                ESTE SUBDOMÍNIO É UM REPOSITÓRIO ESTATÍSTICO DE INVESTIGAÇÃO ARTÍSTICA.
+            </p>
+            <div class="footer-links">
+                <a href="https://paulolopes.org">Início</a> &mdash; 
+                <a href="https://paulolopes.org/costa/">Casa da Costa</a> &mdash;
+                <a href="./index.html">Permacultura</a>
+            </div>
+            <p class="font-mono w3-tiny w3-uppercase w3-wide" style="letter-spacing: 1px; margin-top: 15px; margin: 0;">
+                © 2026 PAULO FURTADO LOPES • <a href="mailto:adm@paulolopes.org" style="color: inherit;">adm@paulolopes.org</a>
+            </p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
