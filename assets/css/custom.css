@@ -1,1 +1,116 @@
+/* ==========================================================================
+   CASA DA COSTA — Living Lab & Artistic Research
+   Style Sheet de Suporte Especializado (assets/css/custom.css)
+   ========================================================================== */
 
+:root {
+    --bg-color: #fcfbf9;          /* Marfim de Arquivo / Papel envelhecido */
+    --text-color: #0f1e2d;        /* Azul-Marinho Profundo / Tinta */
+    --accent-color: #8c2d19;      /* Vermelho-Tijolo / Sanguínea / Cal */
+    --muted-color: #5c6b73;       /* Azul Pedra / Grafite / Salitre */
+    --border-color: #d8d3cd;      /* Linha de Divisão Subtil */
+    --card-bg: #ffffff;           /* Branco Puro para blocos de leitura */
+    
+    --font-serif: "Cardo", "Georgia", "Times New Roman", serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: 'IBM Plex Mono', 'Courier New', monospace;
+}
+
+/* Base Editorial */
+body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    font-family: var(--font-serif);
+    line-height: 1.75;
+    font-size: 1.05rem;
+}
+
+/* Tipografia de Código e Dados */
+.font-mono { font-family: var(--font-mono) !important; }
+.font-sans { font-family: var(--font-sans) !important; }
+.font-serif { font-family: var(--font-serif) !important; }
+
+/* Blocos Auto-Etnográficos (Diário de Obra e Transcrições) */
+.log-entry {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-color);
+    padding: 25px;
+    margin-bottom: 30px;
+}
+
+.log-meta {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--muted-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+/* Citações e Cartografia Oral */
+blockquote.oral-history {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-color);
+    border-left: 2px solid var(--text-color);
+    margin: 20px 0;
+    padding-left: 20px;
+}
+
+/* Tabelas de Dados Abertos e Patologias */
+.open-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    margin: 20px 0;
+}
+
+.open-data-table th {
+    background-color: var(--text-color);
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 14px;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.open-data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+}
+
+.open-data-table tr:hover td {
+    background-color: #f4f1ea;
+}
+
+/* Imagens Etnográficas com Escala */
+.ethno-img-container {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.ethno-img-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.ethno-caption {
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--muted-color);
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
