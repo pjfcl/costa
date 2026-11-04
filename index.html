@@ -231,11 +231,11 @@
             background: var(--accent-color);
         }
 
-        /* Rodapé */
+        /* Rodapé Ajustado com Margens e Limites Definidos */
         footer.site-footer {
             margin-top: 60px;
             border-top: 1px solid var(--border-color);
-            padding-top: 30px;
+            padding-top: 35px;
             padding-bottom: 30px;
             font-family: var(--font-sans);
             font-size: 0.82rem;
@@ -251,6 +251,50 @@
 
         footer.site-footer a:hover {
             text-decoration: underline;
+        }
+
+        .footer-boxes-container {
+            margin-bottom: 35px;
+        }
+
+        .footer-box-left, .footer-box-right {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 22px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        @media (min-width: 993px) {
+            .footer-box-left {
+                width: 64% !important;
+                margin-right: 2% !important;
+                float: left;
+                margin-bottom: 0;
+            }
+            .footer-box-right {
+                width: 34% !important;
+                float: left;
+                margin-bottom: 0;
+            }
+        }
+
+        .btn-donativos {
+            font-family: var(--font-sans);
+            font-size: 0.78rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #ffffff;
+            background-color: var(--text-color);
+            padding: 10px 16px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.2s ease;
+        }
+
+        .btn-donativos:hover {
+            background-color: var(--accent-color);
         }
 
         .footer-links {
@@ -316,26 +360,26 @@
         </section>
 
        
-  <!-- RODAPÉ INSTITUCIONAL ORIGINAL (SEM UTF-8) -->
+  <!-- RODAPÉ INSTITUCIONAL AJUSTADO -->
         <footer class="site-footer">
             
             <div class="footer-boxes-container w3-row w3-text-left">
                 
-                <div class="w3-col m8 l8 footer-box-left">
+                <div class="footer-box-left">
                     <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); margin-top: 0; margin-bottom: 10px;">
-                        Como Navegar Neste Espaço
+                        Sobre a Casa da Costa
                     </h4>
                     <p style="font-size: 0.9rem; color: var(--text-color); margin: 0; line-height: 1.7; text-align: justify;">
-                        O que aqui encontras é o resultado de uma imersão em textos, imagens e sons; em ideias e conceitos; em símbolos. Ao criar este arquivo de notas interligadas, estabeleço um método para organizar o conhecimento obtido nessa viagem — dividindo as notas entre <strong>Sementes</strong> (fragmentos e citações), <strong>Colheitas</strong> (ensaios desenvolvidos) e <strong>Tinturas</strong> (ficção e narrativas experimentais), articuladas com os cadernos de estudo da <strong>Escola</strong> e as ferramentas da <strong>Oficina</strong>.
+                        A <strong>Casa da Costa</strong> assume-se como um <em>living lab</em> de arquitetura vernacular e permacultura costeira. Este espaço digital documenta a reabilitação tátil de uma ruína à beira-mar, cruzando a investigação auto-etnográfica com os saberes materiais tradicionais, a ecologia política do litoral e a poética do habitar em regime de resistência à aceleração contemporânea.
                     </p>
                 </div>
 
-                <div class="w3-col m4 l4 footer-box-right">
+                <div class="footer-box-right">
                     <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-color); margin-top: 0; margin-bottom: 10px;">
                         Apoiar a Oficina
                     </h4>
                     <p style="font-size: 0.85rem; color: var(--muted-color); margin: 0 0 14px 0; line-height: 1.5; text-align: justify;">
-                        Este arquivo livre de publicidade e rastreadores subsiste com o apoio independente da comunidade. Contribui !
+                        Este arquivo livre de publicidade e rastreadores subsiste com o apoio independente da comunidade. Contribui!
                     </p>
                     <div class="w3-center">
                         <a href="https://paypal.me/PauloFurtadoLopes" target="_blank" rel="noopener" class="btn-donativos">
@@ -375,6 +419,3 @@
     <script src="app.js"></script>
 </body>
 </html>
-
-      
-
