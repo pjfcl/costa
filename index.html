@@ -231,7 +231,7 @@
             background: var(--accent-color);
         }
 
-        /* Rodapé Ajustado com Margens e Limites Definidos */
+        /* Rodapé Alinhado e Simétrico (Flexbox para garantir as caixas lado a lado em desktop) */
         footer.site-footer {
             margin-top: 60px;
             border-top: 1px solid var(--border-color);
@@ -254,7 +254,11 @@
         }
 
         .footer-boxes-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
             margin-bottom: 35px;
+            align-items: stretch;
         }
 
         .footer-box-left, .footer-box-right {
@@ -262,21 +266,11 @@
             border: 1px solid var(--border-color);
             padding: 22px;
             box-sizing: border-box;
-            margin-bottom: 20px;
-        }
-
-        @media (min-width: 993px) {
-            .footer-box-left {
-                width: 64% !important;
-                margin-right: 2% !important;
-                float: left;
-                margin-bottom: 0;
-            }
-            .footer-box-right {
-                width: 34% !important;
-                float: left;
-                margin-bottom: 0;
-            }
+            flex: 1;
+            min-width: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .btn-donativos {
@@ -285,7 +279,7 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            color: #ffffff;
+            color: #ffffff !important; /* Texto claro conforme os restantes botões da página */
             background-color: var(--text-color);
             padding: 10px 16px;
             text-decoration: none;
@@ -295,6 +289,7 @@
 
         .btn-donativos:hover {
             background-color: var(--accent-color);
+            color: #ffffff !important;
         }
 
         .footer-links {
@@ -363,25 +358,29 @@
   <!-- RODAPÉ INSTITUCIONAL AJUSTADO -->
         <footer class="site-footer">
             
-            <div class="footer-boxes-container w3-row w3-text-left">
+            <div class="footer-boxes-container w3-text-left">
                 
                 <div class="footer-box-left">
-                    <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); margin-top: 0; margin-bottom: 10px;">
-                        Sobre a Casa da Costa
-                    </h4>
-                    <p style="font-size: 0.9rem; color: var(--text-color); margin: 0; line-height: 1.7; text-align: justify;">
-                        A <strong>Casa da Costa</strong> assume-se como um <em>living lab</em> de arquitetura vernacular e permacultura costeira. Este espaço digital documenta a reabilitação tátil de uma ruína à beira-mar, cruzando a investigação auto-etnográfica com os saberes materiais tradicionais, a ecologia política do litoral e a poética do habitar em regime de resistência à aceleração contemporânea.
-                    </p>
+                    <div>
+                        <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--accent-color); margin-top: 0; margin-bottom: 10px;">
+                            Sobre a Casa da Costa
+                        </h4>
+                        <p style="font-size: 0.9rem; color: var(--text-color); margin: 0; line-height: 1.7; text-align: justify;">
+                            A <strong>Casa da Costa</strong> assume-se como um <em>living lab</em> de arquitetura vernacular e permacultura costeira. Este espaço digital documenta a reabilitação tátil de uma ruína à beira-mar, cruzando a investigação auto-etnográfica com os saberes materiais tradicionais, a ecologia política do litoral e a poética do habitar em regime de resistência à aceleração contemporânea.
+                        </p>
+                    </div>
                 </div>
 
                 <div class="footer-box-right">
-                    <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-color); margin-top: 0; margin-bottom: 10px;">
-                        Apoiar a Oficina
-                    </h4>
-                    <p style="font-size: 0.85rem; color: var(--muted-color); margin: 0 0 14px 0; line-height: 1.5; text-align: justify;">
-                        Este arquivo livre de publicidade e rastreadores subsiste com o apoio independente da comunidade. Contribui!
-                    </p>
-                    <div class="w3-center">
+                    <div>
+                        <h4 class="font-sans" style="font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-color); margin-top: 0; margin-bottom: 10px;">
+                            Apoiar a Oficina
+                        </h4>
+                        <p style="font-size: 0.85rem; color: var(--muted-color); margin: 0 0 14px 0; line-height: 1.5; text-align: justify;">
+                            Este arquivo livre de publicidade e rastreadores subsiste com o apoio independente da comunidade. Contribui!
+                        </p>
+                    </div>
+                    <div class="w3-center" style="margin-top: 15px;">
                         <a href="https://paypal.me/PauloFurtadoLopes" target="_blank" rel="noopener" class="btn-donativos">
                             Donativos via PayPal
                         </a>
